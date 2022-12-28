@@ -17,6 +17,7 @@ jobs:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
           echo Repository is ${{ github.repository }}
+          echo "::debug::Debugging is turned on for steps and runner"
           echo Size of local repository area is `du -hs ${{ github.workspace }}`
           echo Context dump follows:
           echo "$GITHUB_CONTEXT"

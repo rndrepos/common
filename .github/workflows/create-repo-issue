@@ -11,7 +11,7 @@ name: create-repo-issue
         
 jobs:
  
-  create_issue_on_failure:
+  create_issue:
     runs-on: ubuntu-latest 
   
     permissions:

@@ -3,8 +3,8 @@ name: create-repo-issue
 on: 
   workflow_call:
     secrets:
-        token:
-          required: true
+      token:
+        required: true
     inputs:
       title:
         description: 'Issue title'

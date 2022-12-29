@@ -1,4 +1,4 @@
-name: create-repo-issue
+name: create-repo-issue2
   
 on: 
   workflow_call:

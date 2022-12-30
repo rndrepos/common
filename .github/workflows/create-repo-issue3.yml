@@ -1,4 +1,4 @@
-name: create-repo-issue2
+name: create-repo-issue3
   
 on: 
   workflow_call:
@@ -11,18 +11,26 @@ on:
         description: 'Issue body'
         required: true
         type: string
+    outputs:
+      issue-number:
+        description: "The issue number"
+        value: ${{ jobs.create_issue.outputs.number }}
         
 jobs:
  
   create_issue:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
+    # Map job outputs to step outputs
+    outputs:
+      number: ${{ steps.new-issue.number }}
   
     permissions:
       issues: write 
     steps:
       - name: Create issue using REST API
+        id: new-issue
         run: |
-          response=`curl --request POST \
+          response=$(curl --request POST \
           --url https://api.github.com/repos/${{ github.repository }}/issues \
           --header 'authorization: Bearer ${{ secrets.token }}' \
           --header 'content-type: application/json' \
@@ -30,5 +38,5 @@ jobs:
             "title": "${{ inputs.title }}",
             "body": "${{ inputs.body }}"
             }' \
-          --fail`
-          echo "response from curl= $response"
+          --fail | jq '.number') 
+          echo "number=$response" >> $GITHUB_OUTPUT

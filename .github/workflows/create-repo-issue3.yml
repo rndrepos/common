@@ -39,4 +39,5 @@ jobs:
             "body": "${{ inputs.body }}"
             }' \
           --fail | jq '.number') 
+          echo "number=$response"
           echo "number=$response" >> $GITHUB_OUTPUT

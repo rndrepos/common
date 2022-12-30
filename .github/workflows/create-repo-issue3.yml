@@ -14,7 +14,7 @@ on:
     outputs:
       issue-number:
         description: "The issue number"
-        value: ${{ jobs.create_issue.outputs.number }}
+        value: ${{ jobs.create_issue.outputs.i-num }}
         
 jobs:
  
@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     # Map job outputs to step outputs
     outputs:
-      number: ${{ steps.new-issue.number }}
+      i-num: ${{ steps.new-issue.inum }}
   
     permissions:
       issues: write 
@@ -40,4 +40,4 @@ jobs:
             }' \
           --fail | jq '.number') 
           echo "number=$response"
-          echo "number=$response" >> $GITHUB_OUTPUT
+          echo "inum=$response" >> $GITHUB_OUTPUT

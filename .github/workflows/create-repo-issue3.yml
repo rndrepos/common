@@ -14,11 +14,11 @@ on:
     outputs:
       issue-number:
         description: "The issue number"
-        value: ${{ jobs.create_issue.outputs.i-num }}
+        value: ${{ jobs.create-issue.outputs.i-num }}
         
 jobs:
  
-  create_issue:
+  create-issue:
     runs-on: ubuntu-latest
     # Map job outputs to step outputs
     outputs:

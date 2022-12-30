@@ -41,3 +41,9 @@ jobs:
           --fail | jq '.number') 
           echo "number=$response"
           echo "inum=$response" >> $GITHUB_OUTPUT
+    
+  report-issue-number-local:
+    runs-on: ubuntu-latest
+    needs: create-issue
+    steps:
+      - run: echo ${{needs.create-issue.outputs.i-num}}

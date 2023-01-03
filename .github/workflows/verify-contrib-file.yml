@@ -1,0 +1,14 @@
+Verify existence of CONTRIBUTING.md file
+
+on:
+  pull_request:
+  pull_request_target:
+  
+  
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - run: |
+        [[ -f CONTRIBUTING.md ]] || echo "CONTRIBUTING.md file needs to be added to ${{ github.repository}} !"    

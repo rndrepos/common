@@ -12,4 +12,6 @@ jobs:
     
     steps:
       - run: |
-        [[ -f CONTRIBUTING.md ]] || echo "CONTRIBUTING.md file needs to be added to ${{ github.repository}} !"    
+          [[ -f CONTRIBUTING.md ]] || echo "CONTRIBUTING.md file needs to be added to ${{ github.repository }} !"
+          
+      

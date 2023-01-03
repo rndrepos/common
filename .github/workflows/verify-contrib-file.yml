@@ -1,6 +1,7 @@
-Verify existence of CONTRIBUTING.md file
+name: Verify existence of CONTRIBUTING.md file
 
 on:
+  push:
   pull_request:
   pull_request_target:
   

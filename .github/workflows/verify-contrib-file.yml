@@ -12,6 +12,6 @@ jobs:
     
     steps:
       - run: |
-          [[ -f CONTRIBUTING.md ]] || exit -1 "CONTRIBUTING.md file needs to be added to ${{ github.repository }} !"
+          [[ -f CONTRIBUTING.md ]] || exit "CONTRIBUTING.md file needs to be added to ${{ github.repository }} !"
           
       

@@ -9,6 +9,7 @@ jobs:
      
     name: ${{ vars.JOB_NAME }}
     if: ${{ vars.EXEC_WF == 'true' }} && !contains(github.base_ref, '${{ vars.BRANCHES_TO_SKIP }}') 
+    
     runs-on: ubuntu-latest
     
     steps:

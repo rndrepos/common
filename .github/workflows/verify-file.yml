@@ -6,6 +6,8 @@ on:
   
 jobs:
   verify:
+   
+    if: ${{ vars.EXEC_WF }} && !contains(github.base_ref, '${{ vars.BRANCHES_TO_SKIP }}') 
     runs-on: ubuntu-latest
     
     steps:

@@ -28,7 +28,7 @@ jobs:
       issues: write 
       
     steps:
-       - name: Create issue using CLI
+      - name: Create issue using CLI
         id: new-issue
         run: |
           response=`gh issue create --title "demo title" --body "demo body"`

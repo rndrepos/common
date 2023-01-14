@@ -31,7 +31,7 @@ jobs:
       - name: Create issue using CLI
         id: new-issue
         run: |
-          response=`gh issue create --title "demo title" --body "demo body" --repo ${{ github.event.repository.name }}`
+          response=`gh issue create --title "demo title" --body "demo body" --repo ${{ github.event.repository.url }}`
           echo "inum=$response | rev | cut -d'/' -f 1" >> $GITHUB_OUTPUT
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

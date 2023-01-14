@@ -1,4 +1,4 @@
-name: create-repo-issue3
+name: create issue via gh
   
 on: 
   workflow_call:

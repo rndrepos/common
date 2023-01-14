@@ -28,6 +28,7 @@ jobs:
       issues: write 
       
     steps:
+      - uses: actions/checkout@v3
       - name: Create issue using CLI
         id: new-issue
         run: |
